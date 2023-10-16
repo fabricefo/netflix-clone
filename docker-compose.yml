@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  client:
+    image: fabricefo/netflix-clone:client-latest
+    environment:
+      - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+
+  server:
+    image: fabricefo/netflix-clone:server-latest
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+      - PORT=${PORT}
+      - TOKEN_SECRET=${TOKEN_SECRET}
+      - TMDB_BASE_URL=${TMDB_BASE_URL}
+      - TMDB_KEY=${TMDB_KEY}
